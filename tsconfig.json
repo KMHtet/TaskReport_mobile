@@ -1,0 +1,55 @@
+{
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+    /* Completeness */
+      /* Basic Options */
+      "target": "esnext",                       /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */
+      "module": "commonjs",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
+      "lib": ["es2017"],                        /* Specify library files to be included in the compilation. */
+      "allowJs": true,                          /* Allow javascript files to be compiled. */
+      "declaration": true,                      /* Generates corresponding '.d.ts' file. */
+      "noEmit": true,                           /* Do not emit outputs. */
+      "isolatedModules": true,                  /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
+      "strict": true,                           /* Enable all strict type-checking options. */
+      "noUnusedLocals": true,                   /* Report errors on unused locals. */
+      "noUnusedParameters": true,               /* Report errors on unused parameters. */
+      "noImplicitReturns": true,                /* Report error when not all code paths in function return a value. */
+      "noFallthroughCasesInSwitch": true,       /* Report errors for fallthrough cases in switch statement. */
+      "moduleResolution": "node",               
+      "allowSyntheticDefaultImports": true,     
+      "esModuleInterop": true,                  
+      "skipLibCheck": true,                    
+      "resolveJsonModule": true,                
+      "experimentalDecorators": true,           
+      "jsx": "react-native",                    
+      "forceConsistentCasingInFileNames": true, 
+    "baseUrl": "./",
+    "paths": {
+      "@utils": [
+        "./src/utils"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@navigations": [
+        "./src/app/navigations"
+      ],
+      "@navigations/*": [
+        "./src/app/navigations/*"
+      ],
+      "@components": [
+        "./src/app/components"
+      ],
+      "@components/*": [
+        "./src/app/components/*"
+      ],
+      "@assets": [
+        "./src/assets"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+    }
+  }
+}
