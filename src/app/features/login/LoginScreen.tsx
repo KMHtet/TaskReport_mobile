@@ -7,6 +7,7 @@ import { fs, ms, vs } from '@utils/ScaleUtils';
 import { ColorType, LightColor } from 'src/app/commons';
 import { DeviceUtils } from '@utils';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { navigateToRootAdmin } from '@navigations/ScreenNavigation';
 
 const LoginScreen = () => {
 
@@ -17,7 +18,7 @@ const LoginScreen = () => {
     const [isSee, setSee] = React.useState<boolean>(false);
 
     const handleCheckAcc = (values: any) => {
-        Alert.alert("hello")
+        navigateToRootAdmin();
     };
 
     const onSeePassword = () => {

@@ -6,4 +6,6 @@ export const ImagesAsset = {
     close_eye: require('./close_eye.png'),
     submit: require('./submit.png'),
     login_white: require('./login_white.png'),
+    home: require('./home.png'),
+    home_inactive: require('./home_inactive.png'),
 }
