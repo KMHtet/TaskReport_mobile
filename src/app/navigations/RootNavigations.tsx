@@ -8,6 +8,7 @@ import { fs, ms, vs } from '@utils/ScaleUtils';
 import { ImagesAsset } from '@assets';
 import { DeviceUtils, navigationRef } from '@utils';
 import { Image, Text, View } from 'react-native';
+import { LoaddingModal } from '..';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -154,6 +155,7 @@ export const RootNavigation = () => {
           options={{gestureEnabled: false}}
         />
       </Stack.Navigator>
+      <LoaddingModal />
     </NavigationContainer>
   );
 };

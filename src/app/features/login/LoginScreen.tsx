@@ -8,6 +8,7 @@ import { ColorType, LightColor } from 'src/app/commons';
 import { DeviceUtils } from '@utils';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { navigateToRootAdmin } from '@navigations/ScreenNavigation';
+import LoginVM from './LoginVM';
 
 const LoginScreen = () => {
 
@@ -17,9 +18,20 @@ const LoginScreen = () => {
 
     const [isSee, setSee] = React.useState<boolean>(false);
 
+    const loginVM = LoginVM();
+
     const handleCheckAcc = (values: any) => {
-        navigateToRootAdmin();
+        loginVM.login(values.phone, values?.pin, (data: any) => {
+            onLoginSuccess(data);
+        });
+        
     };
+
+    const onLoginSuccess = (data: any) => {
+        if(data){
+            navigateToRootAdmin();
+        } else Alert.alert('fail');
+    }
 
     const onSeePassword = () => {
         setSee(!isSee);
@@ -67,7 +79,7 @@ const LoginScreen = () => {
                                 <InputField
                                     id={'phone'}
                                     inputRef={phoneRef}
-                                    placeholder={'020 ** *** ***'}
+                                    placeholder={'Enter your mail'}
                                     onBlur={handleBlur('phone')}
                                     value={values.phone}
                                     maxLength={50}

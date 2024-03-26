@@ -4,3 +4,4 @@ export * from './button';
 export * from './BasePopup';
 export * from './baseScreen';
 export * from './header';
+export * from './loading';

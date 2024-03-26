@@ -20,7 +20,7 @@ const HomeScreen = () => {
                 </View>
             }
         >
-            <Text>Hello</Text>
+            {/* <Text>Hello</Text> */}
         </BaseScreen>
     );
 };
