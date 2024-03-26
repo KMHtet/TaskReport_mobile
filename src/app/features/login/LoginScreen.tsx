@@ -33,102 +33,102 @@ const LoginScreen = () => {
                 flex: 1,
             }}>
             <KeyboardAwareScrollView
-        contentContainerStyle={{ flexGrow: 1 }}
-        extraScrollHeight={20}
-        enableOnAndroid={true}
-        scrollEnabled={false}
-      >
-            <LogoAnimated />
-            <Formik
-                innerRef={formRef}
-                initialValues={{ phone: '', pin: '' }}
-                onSubmit={handleCheckAcc}
-                validateOnBlur
-                validateOnChange
-                validate={values => {
-                    const errors: any = {};
-                    if (values.phone.length <= 3) {
-                        errors.phone = 'require phone';
-                    }
-                    console.log('kmh', 'have input errors', errors);
-                    return errors;
-                }}>
-                {({
-                    handleChange,
-                    handleBlur,
-                    handleSubmit,
-                    values,
-                    errors,
-                    touched,
-                }) => (
-                    <>
-                        <View />
-                        <View style={styles.inputFieldContainer}>
-                            <InputField
-                                id={'phone'}
-                                inputRef={phoneRef}
-                                placeholder={'020 ** *** ***'}
-                                onBlur={handleBlur('phone')}
-                                value={values.phone}
-                                maxLength={50}
-                                keyboardType={'phone-pad'}
-                                returnKeyType={'next'}
-                                secureTextEntry={false}
-                                styleComponent={styles.styleComponent}
-                                onChangeText={handleChange('phone')}
-                                styleInput={styles.input}
-                                iconLeft={ImagesAsset.phone_white}
-                                iconLeftRoundStyle={styles.iconLeftRound}
-                                errorMessage={errors.phone}
-                                error={errors.phone ? true : false}
-                                touched={errors.phone ? true : false}
-                                multiline={false}
-                            />
-                            <View style={{ height: vs(10) }} />
-                            <InputField
-                                id={'pin'}
-                                inputRef={passwordRef}
-                                placeholder={'Enter your password'}
-                                maxLength={50}
-                                // keyboardType={'default'}
-                                returnKeyType={'done'}
-                                secureTextEntry={!isSee}
-                                styleInput={styles.input}
-                                iconLeft={ImagesAsset.lock_white}
-                                iconLeftRoundStyle={styles.iconLeftRound}
-                                styleComponent={styles.styleComponent}
-                                iconRight={isSee ? ImagesAsset.eye : ImagesAsset.close_eye}
-                                onRightPress={onSeePassword}
-                                onChangeText={handleChange('pin')}
-                                onBlur={handleBlur('pin')}
-                                value={values.pin}
-                                errorMessage={errors.pin}
-                                error={errors.pin ? true : false}
-                                touched={touched.pin ? true : false}
-                                multiline={false}
-                                // onFocus={handleText1Press}
-                                onSubmitEditing={
-                                    errors?.pin || !values.pin ? null : handleSubmit
-                                }
-                            />
-                        </View>
-                        <View style={{ height: vs(15) }} />
-                        <View
-                            style={{ paddingBottom: vs(20), paddingHorizontal: vs(20) }}>
-                            <Button
-                                children={'Login'}
-                                onPress={handleSubmit}
-                                style={styles.button}
-                                titleColor={'white'}
-                                height={vs(50)}
-                                titleStyle={styles.textButton}
-                                rightIcon={ImagesAsset.login_white}
-                                disabled={errors?.phone || !values.phone}
-                            />
-                        </View>
-                    </>
-                )}
-            </Formik>
+                contentContainerStyle={{ flexGrow: 1 }}
+                extraScrollHeight={20}
+                enableOnAndroid={true}
+                scrollEnabled={false}
+            >
+                <LogoAnimated />
+                <Formik
+                    innerRef={formRef}
+                    initialValues={{ phone: '', pin: '' }}
+                    onSubmit={handleCheckAcc}
+                    validateOnBlur
+                    validateOnChange
+                    validate={values => {
+                        const errors: any = {};
+                        if (values.phone.length <= 3) {
+                            errors.phone = 'require phone';
+                        }
+                        console.log('kmh', 'have input errors', errors);
+                        return errors;
+                    }}>
+                    {({
+                        handleChange,
+                        handleBlur,
+                        handleSubmit,
+                        values,
+                        errors,
+                        touched,
+                    }) => (
+                        <>
+                            <View />
+                            <View style={styles.inputFieldContainer}>
+                                <InputField
+                                    id={'phone'}
+                                    inputRef={phoneRef}
+                                    placeholder={'020 ** *** ***'}
+                                    onBlur={handleBlur('phone')}
+                                    value={values.phone}
+                                    maxLength={50}
+                                    keyboardType={'phone-pad'}
+                                    returnKeyType={'next'}
+                                    secureTextEntry={false}
+                                    styleComponent={styles.styleComponent}
+                                    onChangeText={handleChange('phone')}
+                                    styleInput={styles.input}
+                                    iconLeft={ImagesAsset.phone_white}
+                                    iconLeftRoundStyle={styles.iconLeftRound}
+                                    errorMessage={errors.phone}
+                                    error={errors.phone ? true : false}
+                                    touched={errors.phone ? true : false}
+                                    multiline={false}
+                                />
+                                <View style={{ height: vs(10) }} />
+                                <InputField
+                                    id={'pin'}
+                                    inputRef={passwordRef}
+                                    placeholder={'Enter your password'}
+                                    maxLength={50}
+                                    // keyboardType={'default'}
+                                    returnKeyType={'done'}
+                                    secureTextEntry={!isSee}
+                                    styleInput={styles.input}
+                                    iconLeft={ImagesAsset.lock_white}
+                                    iconLeftRoundStyle={styles.iconLeftRound}
+                                    styleComponent={styles.styleComponent}
+                                    iconRight={isSee ? ImagesAsset.eye : ImagesAsset.close_eye}
+                                    onRightPress={onSeePassword}
+                                    onChangeText={handleChange('pin')}
+                                    onBlur={handleBlur('pin')}
+                                    value={values.pin}
+                                    errorMessage={errors.pin}
+                                    error={errors.pin ? true : false}
+                                    touched={touched.pin ? true : false}
+                                    multiline={false}
+                                    // onFocus={handleText1Press}
+                                    onSubmitEditing={
+                                        errors?.pin || !values.pin ? null : handleSubmit
+                                    }
+                                />
+                            </View>
+                            <View style={{ height: vs(15) }} />
+                            <View
+                                style={{ paddingBottom: vs(20), paddingHorizontal: vs(20) }}>
+                                <Button
+                                    children={'Login'}
+                                    onPress={handleSubmit}
+                                    style={styles.button}
+                                    titleColor={'white'}
+                                    height={vs(50)}
+                                    titleStyle={styles.textButton}
+                                    rightIcon={ImagesAsset.login_white}
+                                    disabled={errors?.phone || !values.phone}
+                                />
+                            </View>
+                        </>
+                    )}
+                </Formik>
             </KeyboardAwareScrollView>
         </View>
     );
