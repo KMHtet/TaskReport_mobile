@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Alert, StyleSheet, Text, View } from 'react-native';
 import { Button, InputField, LogoAnimated } from '@components';
 import { Formik } from 'formik';
@@ -20,15 +20,26 @@ const LoginScreen = () => {
 
     const loginVM = LoginVM();
 
+    useEffect(() => {
+        formRef?.current?.setFieldValue(
+            'phone',
+            'eve.holt@reqres.in'
+        );
+        formRef?.current?.setFieldValue(
+            'pin',
+            'cityslicka'
+        );
+    }, []);
+
     const handleCheckAcc = (values: any) => {
         loginVM.login(values.phone, values?.pin, (data: any) => {
             onLoginSuccess(data);
         });
-        
+
     };
 
     const onLoginSuccess = (data: any) => {
-        if(data){
+        if (data) {
             navigateToRootAdmin();
         } else Alert.alert('fail');
     }
@@ -59,10 +70,6 @@ const LoginScreen = () => {
                     validateOnChange
                     validate={values => {
                         const errors: any = {};
-                        if (values.phone.length <= 3) {
-                            errors.phone = 'require phone';
-                        }
-                        console.log('kmh', 'have input errors', errors);
                         return errors;
                     }}>
                     {({
